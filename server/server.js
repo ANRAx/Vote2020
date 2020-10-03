@@ -25,7 +25,7 @@ app.get('/api', (req, res) => res.send('hello from api'));
 /**
  * Wildcard to catch all routes
  */
-app.get('*', (req, res) => res.sendFile(public));
+app.get('/', (req, res) => res.sendFile('public/index.html'));
 
 /**
  * Global error handler

@@ -22,11 +22,12 @@ Client -> API Route -> Voter Info
 
 ### API List
 ---
-1. IP Stack
+1. Use req.headers['x-forwarded-for'] -> User IP Address
+2. IP Stack using user IP
 - To find a users zip code and lat and long
-2. Google Geolocator
+3. Google Geolocator
 - To parse a users lat and long into an address
-3. US geocoder
+4. US geocoder
 - To show releveant info regarding election info to the user given an address
 
 User lands on page
