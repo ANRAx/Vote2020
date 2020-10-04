@@ -6,11 +6,13 @@ import RegisterVote from '../buttonComponents/RegisterVote';
 
 const MainContainer = () => {
   return (
-    <div>
+    <div className="relative mt-8 mb-0 border-solid border-4 border-gray-600">
       <UserState />
       <UserDistrict />
       <UserCalendar />
-      <RegisterVote />
+      <div className="mt-12 text-center">
+        <RegisterVote />
+      </div>
     </div>
   );
 };

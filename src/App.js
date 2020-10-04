@@ -9,10 +9,11 @@ import Footer from './components/Footer';
 const App = () => {
   return (
     <div className="App">
-      <h1>Yeet</h1>
       <Header />
-      <MainContainer />
-      <Perks />
+      <div className="flex justify-center">
+        <MainContainer />
+        <Perks />
+      </div>
       <Footer />
     </div>
   );

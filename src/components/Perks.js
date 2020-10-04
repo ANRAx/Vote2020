@@ -4,24 +4,19 @@ import SignUp from './buttonComponents/SignUp';
 const Perks = () => {
   return (
     <div>
-      <p>
-        On the other hand, we denounce with righteous indignation and dislike
-        men who are so beguiled and demoralized by the charms of pleasure of the
-        moment, so blinded by desire, that they cannot foresee the pain and
-        trouble that are bound to ensue; and equal blame belongs to those who
-        fail in their duty through weakness of will, which is the same as saying
-        through shrinking from toil and pain. These cases are perfectly simple
-        and easy to distinguish. In a free hour, when our power of choice is
-        untrammelled and when nothing prevents our being able to do what we like
-        best, every pleasure is to be welcomed and every pain avoided. But in
-        certain circumstances and owing to the claims of duty or the obligations
-        of business it will frequently occur that pleasures have to be
-        repudiated and annoyances accepted. The wise man therefore always holds
-        in these matters to this principle of selection: he rejects pleasures to
-        secure other greater pleasures, or else he endures pains to avoid worse
-        pains
-      </p>
-      <SignUp />
+      <div className="ml-16 mt-8 max-w-sm rounded overflow-hidden shadow-lg pb-4">
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">Why Should You Sign Up?</div>
+          <p className="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div className="text-center">
+          <SignUp />
+        </div>
+      </div>
     </div>
   );
 };

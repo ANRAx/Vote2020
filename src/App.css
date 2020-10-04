@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box !important;
+}
+ul {
+  list-style-type: none !important;
+}
+body {
+  font-family: Verdana, sans-serif !important;
+}
+
+.month {
+  padding: 70px 25px !important;
+  width: 100% !important;
+  background: #1abc9c !important;
+  text-align: center !important;
+}
+
+.month ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.month ul li {
+  color: white !important;
+  font-size: 20px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+}
+
+.month .prev {
+  float: left !important;
+  padding-top: 10px !important;
+}
+
+.month .next {
+  float: right !important;
+  padding-top: 10px !important;
+}
+
+.weekdays {
+  margin: 0 !important;
+  padding: 10px 0 !important;
+  background-color: #ddd !important;
+}
+
+.weekdays li {
+  display: inline-block !important;
+  width: 13.6% !important;
+  color: #666 !important;
+  text-align: center !important;
+}
+
+.days {
+  padding: 10px 0 !important;
+  background: #eee !important;
+  margin: 0 !important;
+}
+
+.days li {
+  list-style-type: none !important;
+  display: inline-block !important;
+  width: 13.6% !important;
+  text-align: center !important;
+  margin-bottom: 5px !important;
+  font-size: 12px !important;
+  color: #777 !important;
+}
+
+.days li .active {
+  padding: 5px !important;
+  background: #1abc9c !important;
+  color: white !important;
+}
+
+/* Add media queries for smaller screens */
+/* @media screen and (max-width: 720px) {
+    .weekdays li,
+    .days li {
+      width: 13.1%;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .weekdays li,
+    .days li {
+      width: 12.5%;
+    }
+    .days li .active {
+      padding: 2px;
+    }
+  }
+
+  @media screen and (max-width: 290px) {
+    .weekdays li,
+    .days li {
+      width: 12.2%;
+    }
+  } */
