@@ -1,20 +1,18 @@
 /**
 Server Side:
-req.headers -> IP Stack (lat & long) 
-Open Cage (address) ->  
+req.headers -> IP Stack (lat & long)  
 US geocoder (address & zip) ->  WE ARE HERE
 JSON to display relevant data
 
 get user ip addresss at '/' with req.header 
 RES -> clientside
 
-routes: api route
-http://api.ipstack.com/100.36.173.152?access_key=a99e8aa317387ad37f27dcc6a7a478eb
-api key: a99e8aa317387ad37f27dcc6a7a478eb
+if required, user input can post address
+then we parse the address into lat and long
+using locationToAddress middleware
 */
 
 const { default: Axios } = require('axios');
-// const axios = require('axios');
 
 // get user ip
 const userIp = (req, res, next) => {
@@ -45,39 +43,4 @@ const ipStack = async (req, res, next) => {
   }
 };
 
-const locationToAddress = (req, res, next) => {
-  const API_KEY = '03b7a51f4e7846b381384acce51a7496';
-  const { lat, long } = res.locals.location;
-  const API_URL = `https://api.opencagedata.com/geocode/v1/json?q=${lat}%2C%20${long}&key=${API_KEY}&language=en&pretty=1`;
-
-  Axios(API_URL).then((response) => {
-    const {
-      house_number,
-      road,
-      village,
-      state,
-      postcode,
-      formatted,
-    } = response.data.results[0].components;
-
-    const userAddress = {
-      houseNumber: house_number,
-      street: road,
-      city: village,
-      state,
-      postcode,
-      fullAddress: `${house_number} ${road} ${village}, ${state} ${postcode}`,
-    };
-
-    res.locals.address = userAddress;
-
-    return next();
-  });
-};
-
-const test = (req, res, next) => {
-  console.log(res.locals.address);
-  return next();
-};
-
-module.exports = [userIp, ipStack, locationToAddress, test];
+module.exports = [userIp, ipStack];
