@@ -23,9 +23,12 @@ const UserStateInfo = async (req, res, next) => {
 };
 
 const userInfo = (req, res, next) => {
-  const filteredData = absenteeVote.data.filter(
-    (el) => el.state === res.locals.stateInfo.state
-  );
+  const filteredData = absenteeVote.data.filter((el) => {
+    return (
+      el.state.replace(/\s+/g, '').toLowerCase() ===
+      res.locals.stateInfo.state.replace(/\s+/g, '').toLowerCase()
+    );
+  });
 
   const data = filteredData[0].deadline.split('.');
 
