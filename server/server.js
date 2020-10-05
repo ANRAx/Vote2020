@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+
 const app = express();
 
 const PORT = 3000;
@@ -21,11 +22,14 @@ app.use(express.static(public));
  * Routes
  */
 app.get('/api', (req, res) => res.send('hello from api'));
-
+const locationMiddleware = require('./controllers/locationControllers.js');
 /**
  * Wildcard to catch all routes
  */
-app.get('*', (req, res) => res.sendFile(public));
+app.get('/ip', locationMiddleware, (req, res) => {
+  // res.sendFile(public)
+  res.status(200).json(res.locals.ip);
+});
 
 /**
  * Global error handler
