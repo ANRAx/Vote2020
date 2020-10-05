@@ -14,6 +14,7 @@ module.exports = {
     port: 8080,
     publicPath: 'http://localhost:8080/dist/',
     hotOnly: true,
+    proxy: { '/api': 'http://localhost:3000' },
   },
   module: {
     rules: [

@@ -30,7 +30,7 @@ const userInfo = (req, res, next) => {
   const data = filteredData[0].deadline.split('.');
 
   res.locals.userInfo = {
-    userState: res.locals.stateInfo.state,
+    state: res.locals.stateInfo.state,
     districtNumber: res.locals.stateInfo.districtNumber,
     inPersonDeadline: data[0],
     mailInDeadline: data[1],

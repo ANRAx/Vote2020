@@ -18,16 +18,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(public));
 
-const locationMiddleware = require('./controllers/locationControllers.js');
-const userVoteInfo = require('./controllers/userVoteController.js');
+const userInfoRoute = require('./routes');
 
 /**
  * Routes
  */
 // res.json(res.locals.userInfo)
-app.get('/api/voteinfo', locationMiddleware, userVoteInfo, (req, res) =>
-  res.status(200).json(res.locals.userInfo)
-);
+app.use('/api', userInfoRoute);
 
 /**
  * Wildcard to catch all routes

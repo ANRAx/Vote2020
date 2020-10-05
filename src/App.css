@@ -72,6 +72,40 @@ body {
   color: white !important;
 }
 
+.days li .active-inPersonDeadline {
+  padding: 5px !important;
+  background: #601515 !important;
+  color: white !important;
+}
+
+.inPersonDeadline {
+  color: #601515;
+}
+
+.days li .active-mailDeadline {
+  padding: 5px !important;
+  background: #236598 !important;
+  color: white !important;
+}
+
+.mailDeadline {
+  color: #236598;
+}
+
+.onlineDeadline {
+  color: #172e3f;
+}
+
+.days li .active-onlineDeadline {
+  padding: 5px !important;
+  background: #172e3f !important;
+  color: white !important;
+}
+
+.days li p {
+  color: red;
+}
+
 /* Add media queries for smaller screens */
 /* @media screen and (max-width: 720px) {
     .weekdays li,
