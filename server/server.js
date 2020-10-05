@@ -18,17 +18,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(public));
 
+const locationMiddleware = require('./controllers/locationControllers.js');
+const userVoteInfo = require('./controllers/userVoteController.js');
+
 /**
  * Routes
  */
-app.get('/api', (req, res) => res.send('hello from api'));
-const locationMiddleware = require('./controllers/locationControllers.js');
+// res.json(res.locals.userInfo)
+app.get('/api/voteinfo', locationMiddleware, userVoteInfo, (req, res) =>
+  res.status(200).json(res.locals.userInfo)
+);
+
 /**
  * Wildcard to catch all routes
  */
-app.get('/ip', locationMiddleware, (req, res) => {
-  // res.sendFile(public)
-  res.status(200).json(res.locals.ip);
+app.get('/', (req, res) => {
+  res.status(200).send(public);
 });
 
 /**
