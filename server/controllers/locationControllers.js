@@ -17,10 +17,8 @@ const { default: Axios } = require('axios');
 // get user ip
 const userIp = (req, res, next) => {
   // req.headers is for client ip and req.connection is for proxy ip
-  const ip =
-    '100.36.173.152' || // Remove this during production
-    req.headers['x-forwarded-for'] ||
-    req.connection.remoteAddress;
+  // '100.36.173.152' || // Remove this during production
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   res.locals.ipAddress = ip;
   return next();
 };

@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 /**
  * Paths
@@ -29,10 +29,13 @@ app.use('/api', userInfoRoute);
 /**
  * Wildcard to catch all routes
  */
-app.get('/', (req, res) => {
-  res.status(200).send(public);
-});
+// app.get('/', (req, res) => {
+//   res.status(200).send(public);
+// });
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 /**
  * Global error handler
  */

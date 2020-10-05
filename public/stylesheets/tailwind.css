@@ -4,3 +4,22 @@
 
 @tailwind utilities;
 
+/* extracted reusable tailwind components */
+/* if you make any changes: must npm run start( so it rebuilds css again: npm run build:css again) */
+
+/* "bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" */
+
+/* button components */
+.button {
+    @apply px-4 py-2 font-semibold text-blue-700 bg-white border border-blue-500 rounded;
+}
+
+.button:hover {
+    @apply text-white bg-blue-500 border-transparent shadow-lg;
+}
+  /* card components */
+  
+.card {
+    @apply max-w-sm pb-4 mt-8 ml-16 overflow-hidden rounded shadow-md;
+}
+  

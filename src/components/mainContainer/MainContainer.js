@@ -12,7 +12,7 @@ const MainContainer = () => {
   const { voteInfo } = useStore();
 
   return (
-    <div className="relative mt-8 mb-0">
+    <div className="relative mt-8 mb-24 border-4 border-gray-200 border-opacity-50 border-solid rounded ">
       <UserState state={voteInfo[0].state} />
       <UserDistrict district={voteInfo[0].districtNumber} />
       <UserCalendar />

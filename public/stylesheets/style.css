@@ -21234,6 +21234,56 @@ video {
           animation: bounce 1s infinite;
 }
 
+/* extracted reusable tailwind components */
+
+/* if you make any changes: must npm run start( so it rebuilds css again: npm run build:css again) */
+
+/* "bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" */
+
+/* button components */
+
+.button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+  --text-opacity: 1;
+  color: #2b6cb0;
+  color: rgba(43, 108, 176, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #4299e1;
+  border-color: rgba(66, 153, 225, var(--border-opacity));
+  border-radius: 0.25rem;
+}
+
+.button:hover {
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #4299e1;
+  background-color: rgba(66, 153, 225, var(--bg-opacity));
+  border-color: transparent;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* card components */
+
+.card {
+  max-width: 24rem;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  margin-left: 4rem;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -103569,4 +103619,4 @@ video {
             animation: bounce 1s infinite;
   }
 }
-
+  
